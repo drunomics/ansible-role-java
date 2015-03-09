@@ -1,0 +1,7 @@
+---
+##
+# Installs Java.
+#
+
+- name: Installing Java OpenJDK 7
+  action: apt pkg=openjdk-7-jre-headless state=latest

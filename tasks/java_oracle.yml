@@ -12,7 +12,7 @@
   debconf: name=oracle-java7-installer question='lshared/accepted-oracle-license-v1-1' value=true vtype=boolean
 
 - name: Java | Installing Java
-  apt: pkg={{ item }} state=latest
+  apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time=86400
   with_items:
     - oracle-java7-installer
     - oracle-java7-set-default

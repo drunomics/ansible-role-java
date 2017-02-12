@@ -3,5 +3,6 @@
 # Installs Java.
 #
 
-- name: Installing Java OpenJDK 7
-  action: apt pkg=openjdk-7-jre-headless state=latest
+- name: Installing Java OpenJDK
+  action: apt pkg={{ item }} state=present
+  with_items: "{{ packages }}"

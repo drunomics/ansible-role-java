@@ -1,0 +1,15 @@
+# The playbook requires a running container, see run-container.yml.
+---
+- hosts: all:&{{ limit_groups | default('container') }}
+  become: true
+  vars:
+    java_openjdk: false
+
+  roles:
+    - self
+
+  post_tasks:
+    - name: Ensure java is installed
+      shell: >
+        java -version
+      tags: assert

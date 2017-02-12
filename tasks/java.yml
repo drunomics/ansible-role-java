@@ -1,8 +1,8 @@
 ---
 ##
-# Installs Java.
+# Installs Java OpenJDK.
 #
 
 - name: Installing Java OpenJDK
-  action: apt pkg={{ item }} state=present
-  with_items: "{{ packages }}"
+  apt: pkg={{ item }} state=present update_cache=yes cache_valid_time=86400
+  with_items: "{{ java_apt_packages_open_jdk }}"

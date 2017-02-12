@@ -2,9 +2,9 @@
 
 - include: "java.yml"
   tags: "java"
-  when: base_java_openjdk
+  when: java_openjdk
 
 - include: "java_oracle.yml"
   tags: "java"
-  when: not base_java_openjdk
+  when: not java_openjdk
 

@@ -1,6 +1,6 @@
 ---
-
-base_java_openjdk: true
+# Backwards compatibility for deprecated variable name base_java_openjdk.
+java_openjdk: "{{ base_java_openjdk|default(true) }}"
 
 java_apt_packages_open_jdk:
   - openjdk-7-jre-headless

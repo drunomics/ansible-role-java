@@ -1,0 +1,3 @@
+---
+java_apt_packages_open_jdk:
+  - "{{ 'openjdk-7-jre-headless' if java_openjdk_full else 'openjdk-7-jre' }}"

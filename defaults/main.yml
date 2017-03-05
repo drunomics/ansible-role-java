@@ -1,9 +1,9 @@
 ---
 # Backwards compatibility for deprecated variable name base_java_openjdk.
+# Just set it to true or false.
 java_openjdk: "{{ base_java_openjdk|default(true) }}"
-
-java_apt_packages_open_jdk:
-  - openjdk-7-jre-headless
+# Whether to install open JDK headless (false) or the full version (true).
+java_openjdk_full: "{{ false if base_is_server|default(true) else true }}"
 
 java_apt_oracle_installer_package: oracle-java8-installer
 java_apt_packages_oracle:

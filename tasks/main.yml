@@ -1,6 +1,11 @@
 ---
+- name: "Add default variables per distribution"
+  include_vars: "{{ item }}"
+  with_items:
+    - "{{ ansible_distribution_release }}.yml"
+  check_mode: no
 
-- include: "java.yml"
+- include: "java_openjdk.yml"
   tags: "java"
   when: java_openjdk
 
